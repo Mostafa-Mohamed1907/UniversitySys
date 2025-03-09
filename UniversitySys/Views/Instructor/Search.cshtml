@@ -1,0 +1,26 @@
+﻿@* @model Instructor
+
+<h1>Search</h1>
+
+<form method="get" action="/Instructor/Search">
+    <div>
+        <label for="Name">Name</label>
+        <input type="text" name="name" id="Name" class="form-control" />
+        <button type="submit" class="btn btn-primary">Search</button>
+    </div>
+</form>
+
+@if (Model != null)
+{
+    <div>
+        <h3>Search Result:</h3>
+        <p>Name: @Model.Name</p>
+        <p>Department: @Model.Department?.Name</p>
+        <a href="/Instructor/Details/@Model.Id" class="btn btn-info">View Details</a>
+    </div>
+}
+else if (ViewBag.Message != null)
+{
+    <p style="color: red;">@ViewBag.Message</p>
+}
+ *@
