@@ -1,0 +1,42 @@
+﻿@model IEnumerable<UniversitySys.Models.Course>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">MinDegree</th>
+            <th scope="col">Degree</th>
+            <th scope="col">Hourse</th>
+            <th scope="col">Department</th>
+            <th scope="col">About Course</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var course in Model)
+        {
+            <tr>
+                
+                <td>@course.Id</td>
+                <td>@course.Name</td>
+                <td>@course.MinDegree</td>
+                <td>@course.Degree</td>
+                <td>@course.Hours</td>
+                <td>@course.Department.Name</td>
+                <td><a asp-action="Details" asp-controller="Course" asp-route-id="@course.Id">Details</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div>
+    <a asp-action="Add" asp-controller="Course" >Add Course</a>
+</div>
+

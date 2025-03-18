@@ -1,11 +1,11 @@
-﻿@* @model Instructor
+﻿@model Instructor
 
 <h1>Search</h1>
 
-<form method="get" action="/Instructor/Search">
+<form method="get" asp-controller="Instructor" asp-action="Search" asp-route-name="Name">
     <div>
-        <label for="Name">Name</label>
-        <input type="text" name="name" id="Name" class="form-control" />
+        <label for="Name" > Name </label>
+        <input type="text" name="name" id="Name" class="form-control" /><br />
         <button type="submit" class="btn btn-primary">Search</button>
     </div>
 </form>
@@ -23,4 +23,3 @@ else if (ViewBag.Message != null)
 {
     <p style="color: red;">@ViewBag.Message</p>
 }
- *@
